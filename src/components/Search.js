@@ -26,7 +26,9 @@ class Search extends React.Component {
           value={this.state.value}
           onChange={this.handleInputChange.bind(this)}
         />
-        <button className="btn hidden-sm-down">
+        <button className="btn hidden-sm-down" 
+        // onClick={this.props.handleSearchChange}
+        >
           <span className="glyphicon glyphicon-search"></span>
         </button>
       </div>

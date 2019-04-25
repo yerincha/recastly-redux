@@ -1,15 +1,17 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import Search from './../components/Search.js';
 import handleSearchChange from '../actions/search.js';
 import handleVideoSearch from '../actions/search.js';
 
-var SearchContainer = (props) => {
-    <Search getYouTubeVideos={props.handleSearchInputChange}/>
-};
+var SearchContainer = (props) => (
+    <Search getYouTubeVideos={props.handleSearchInputChange} handleSearchChange={props.handleSearchChange} video={props.video}/>
+);
 
 var mapDispatchToProps = (dispatch) => {
     return {
-        handleSearchInputChange: (q) => dispatch(handleVideoSearch(q))
+        handleSearchInputChange: (q) => dispatch(handleVideoSearch(q)),
+        handleSearchChange: (e) => dispatch(handleSearchChange(e))
     };
 }
 
